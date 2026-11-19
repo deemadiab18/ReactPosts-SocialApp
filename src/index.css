@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@theme {
+  --color-brand-50: #eaf7fb;
+  --color-brand-100: #cdebf4;
+  --color-brand-200: #9ad6e8;
+  --color-brand-300: #5db9d5;
+  --color-brand-400: #2a9bbe;
+  --color-brand-500: #087a9f;
+  --color-brand-600: #066583;
+  --color-brand-700: #055069;
+  --color-brand-800: #043c4e;
+  --color-brand-900: #032a37;
+
+  --color-primary: var(--color-brand-500);
+  --color-primary-hover: var(--color-brand-600);
+  --color-primary-light: var(--color-brand-50);
+  --color-primary-border: var(--color-brand-200);
+  --color-primary-bg: var(--color-brand-50);
+}
+
+:root {
+  --accent: var(--color-brand-500);
+  --accent-foreground: #ffffff;
+  color-scheme: light;
+}
+
+.dark {
+  --accent: var(--color-brand-400);
+  --accent-foreground: #ffffff;
+  color-scheme: dark;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #2a9bbe, #087a9f, #055069);
+}
+
+.bg-brand-soft {
+  background: linear-gradient(180deg, #eaf7fb, #cdebf4);
+}
+
+.dark .bg-brand-soft {
+  background: linear-gradient(160deg, #043c4e, #032a37);
+}
+
+.bg-brand-dark {
+  background: linear-gradient(160deg, #043c4e, #032a37);
+}
+
+.auth-title {
+  @apply text-3xl font-extrabold text-primary;
+}
+
+.auth-description {
+  @apply text-base font-medium leading-snug text-slate-700;
+}
+
+.brand-card {
+  @apply mt-6 rounded-2xl border border-primary-border bg-white/80 p-4 shadow-sm;
+}
+
+.dark .brand-card {
+  @apply border-brand-700 bg-brand-900/50;
+}
+
+.brand-label {
+  @apply text-sm font-extrabold uppercase tracking-[0.14em] text-primary;
+}
+
+.brand-title {
+  @apply mt-1 text-lg font-bold text-slate-900;
+}
+
+.dark .brand-title {
+  @apply text-slate-100;
+}
+
+.brand-description {
+  @apply mt-2 text-sm leading-relaxed text-slate-700;
+}
+
+.dark .brand-description {
+  @apply text-slate-300;
+}
+
+.stats-grid {
+  @apply mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3;
+}
+
+.stat-card {
+  @apply rounded-xl border border-primary-border bg-primary-bg px-3 py-2;
+}
+
+.stat-value {
+  @apply text-base font-extrabold text-primary;
+}
+
+.stat-label {
+  @apply text-xs font-bold uppercase tracking-wide text-slate-600;
+}
+
+.app-shell {
+  @apply min-h-screen bg-slate-50 text-slate-900;
+}
+
+.dark .app-shell {
+  @apply bg-brand-900 text-slate-100;
+}
+
+.page-content {
+  @apply mx-auto w-full max-w-3xl px-4 pb-10 pt-24 lg:pl-64;
+}
+
+.home-card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-brand-700 dark:bg-brand-800/40;
+}
+
+.home-search {
+  @apply rounded-full border border-slate-200 bg-slate-50 dark:border-brand-700 dark:bg-brand-900/50;
+}
+
+.feed-layout {
+  @apply grid gap-6 xl:grid-cols-[minmax(0,640px)_minmax(280px,320px)] xl:justify-center;
+}
+
+.feed-rail {
+  @apply w-full max-w-[320px];
+}
+
+.home-sidebar {
+  @apply sticky top-16 h-[calc(100vh-4rem)] self-start;
+}
+
+.profile-cover {
+  background: linear-gradient(135deg, #2a9bbe, #087a9f, #043c4e);
+}
+
+.auth-hero {
+  @apply text-white;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #043c4e, #032a37);
+}
+
+.auth-hero-rings {
+  @apply pointer-events-none absolute inset-0 opacity-30;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(90, 185, 213, 0.15) 0, transparent 50%),
+    repeating-radial-gradient(
+      circle at 50% 120%,
+      transparent 0 40px,
+      rgba(255, 255, 255, 0.04) 40px 41px
+    );
+}
+
+.auth-field-label {
+  @apply text-sm font-semibold text-slate-800;
+}
+
+.auth-field-error {
+  @apply text-xs font-medium text-[#d93025];
+}
+
+.auth-input {
+  @apply rounded-xl border border-slate-200 bg-white text-slate-900;
+}
+
+.auth-loading-bar {
+  @apply flex items-center justify-center gap-2 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 text-sm font-medium text-brand-700;
+}
+
+.auth-input-error {
+  @apply border-red-300 ring-1 ring-red-200;
+}
+
+.auth-alert-error {
+  @apply rounded-xl border border-red-200 bg-[#fff5f5] px-4 py-3 text-sm leading-snug text-[#e53e3e];
+}
+
+.auth-mobile-badge {
+  @apply text-[10px] font-extrabold uppercase tracking-[0.14em] text-brand-500;
+}
