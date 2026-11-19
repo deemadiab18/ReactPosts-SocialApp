@@ -15,7 +15,7 @@ export default function ReactLogoMark({ size = "sm", className = "" }: ReactLogo
       aria-hidden
     >
       <img
-        src="/react-logo.png"
+        src={`${import.meta.env.BASE_URL}react-logo.png`}
         alt=""
         className="h-full w-full object-contain"
         width={size === "md" ? 44 : 36}

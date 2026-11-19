@@ -11,7 +11,10 @@ import PostDetails from "../pages/posts/PostDetails";
 import ChangePassword from "../pages/change-password/ChangePassword";
 import Notifications from "../pages/notifications/Notifications";
 
-export const routes = createBrowserRouter([
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+export const routes = createBrowserRouter(
+  [
   {
     path: "",
     element: <MainLayout />,
@@ -69,4 +72,6 @@ export const routes = createBrowserRouter([
       { path: "*", element: <NotFound /> },
     ],
   },
-]);
+  ],
+  basename ? { basename } : undefined,
+);
